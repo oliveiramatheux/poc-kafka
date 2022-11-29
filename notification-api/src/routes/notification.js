@@ -12,11 +12,11 @@ router.post('/', async (req, res) => {
 
   // Chamar micro serviço
   await req.producer.send({
-    topic: 'issue-certificate',
+    topic: 'notification-response',
     compression: CompressionTypes.GZIP,
     messages: [
       { value: JSON.stringify(message) },
-      { value: JSON.stringify({ ...message, user: { ...message.user, name: 'Pellizzetti' } }) }
+      { value: JSON.stringify({ ...message, user: { ...message.user, name: 'User 02' } }) }
     ]
   })
 

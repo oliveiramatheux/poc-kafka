@@ -13,7 +13,7 @@ const kafka = new Kafka({
   logLevel: logLevel.WARN,
   retry: {
     initialRetryTime: 300,
-    retries: 10
+    retries: 2
   }
 })
 
@@ -31,7 +31,7 @@ async function kafkaSetup () {
   await producer.connect()
   await consumer.connect()
 
-  await consumer.subscribe({ topic: 'certification-response' })
+  await consumer.subscribe({ topic: 'notification-response' })
 
   await consumer.run({
     eachMessage: async ({ _topic, _partition, message }) => {

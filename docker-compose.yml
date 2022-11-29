@@ -12,5 +12,6 @@ services:
       KAFKA_ADVERTISED_HOST_NAME: localhost
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_CREATE_TOPICS: "send-notification:1:1,notification-response:1:1"
+      KAFKA_BROKER_ID: 1
     # volumes:
     #   - /var/run/docker.sock:/var/run/docker.sock
